@@ -1,16 +1,13 @@
 lockfileVersion: '9.0'
 
 settings:
-  autoInstallPeers: false
+  autoInstallPeers: true
   excludeLinksFromLockfile: false
 
 importers:
 
   .:
     dependencies:
-      '@rspack/core':
-        specifier: ^1.0.0
-        version: 1.1.6(@swc/helpers@0.5.15)
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
@@ -21,6 +18,9 @@ importers:
       '@rslib/core':
         specifier: ^0.1.4
         version: 0.1.4(typescript@5.7.2)
+      '@rspack/core':
+        specifier: ^1.1.6
+        version: 1.1.6(@swc/helpers@0.5.15)
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -301,61 +301,51 @@ packages:
     resolution: {integrity: sha512-QAg11ZIt6mcmzpNE6JZBpKfJaKkqTm1A9+y9O+frdZJEuhQxiugM05gnCWiANHj4RmbgeVJpTdmKRmH/a+0QbA==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.28.1':
     resolution: {integrity: sha512-dRP9PEBfolq1dmMcFqbEPSd9VlRuVWEGSmbxVEfiq2cs2jlZAl0YNxFzAQS2OrQmsLBLAATDMb3Z6MFv5vOcXg==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.28.1':
     resolution: {integrity: sha512-uGr8khxO+CKT4XU8ZUH1TTEUtlktK6Kgtv0+6bIFSeiSlnGJHG1tSFSjm41uQ9sAO/5ULx9mWOz70jYLyv1QkA==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.28.1':
     resolution: {integrity: sha512-QF54q8MYGAqMLrX2t7tNpi01nvq5RI59UBNx+3+37zoKX5KViPo/gk2QLhsuqok05sSCRluj0D00LzCwBikb0A==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loongarch64-gnu@4.28.1':
     resolution: {integrity: sha512-vPul4uodvWvLhRco2w0GcyZcdyBfpfDRgNKU+p35AWEbJ/HPs1tOUrkSueVbBS0RQHAf/A+nNtDpvw95PeVKOA==}
     cpu: [loong64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.28.1':
     resolution: {integrity: sha512-pTnTdBuC2+pt1Rmm2SV7JWRqzhYpEILML4PKODqLz+C7Ou2apEV52h19CR7es+u04KlqplggmN9sqZlekg3R1A==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.28.1':
     resolution: {integrity: sha512-vWXy1Nfg7TPBSuAncfInmAI/WZDd5vOklyLJDdIRKABcZWojNDY0NJwruY2AcnCLnRJKSaBgf/GiJfauu8cQZA==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.28.1':
     resolution: {integrity: sha512-/yqC2Y53oZjb0yz8PVuGOQQNOTwxcizudunl/tFs1aLvObTclTwZ0JhXF2XcPT/zuaymemCDSuuUPXJJyqeDOg==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.28.1':
     resolution: {integrity: sha512-fzgeABz7rrAlKYB0y2kSEiURrI0691CSL0+KXwKwhxvj92VULEDQLpBYLHpF49MSiPG4sq5CK3qHMnb9tlCjBw==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.28.1':
     resolution: {integrity: sha512-xQTDVzSGiMlSshpJCtudbWyRfLaNiVPXt1WgdWTwWz9n0U12cI2ZVtWe/Jgwyv/6wjL7b66uu61Vg0POWVfz4g==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.28.1':
     resolution: {integrity: sha512-wSXmDRVupJstFP7elGMgv+2HqXelQhuNf+IS4V+nUpNVi/GUiBgDmfwD0UGN3pcAnWsgKG3I52wMOBnk1VHr/A==}
@@ -404,25 +394,21 @@ packages:
     resolution: {integrity: sha512-4atnoknJx/c3KaQElsMIxHMpPf2jcRRdWsH/SdqJIRSrkWWakMK9Yv4TFwH680I4HDTMf1XLboMVScHzW8e+Mg==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rspack/binding-linux-arm64-musl@1.1.6':
     resolution: {integrity: sha512-7QMtwUtgFpt3/Y3/X18fSyN+kk4H8ZnZ8tDzQskVWc/j2AQYShZq56XQYqrhClzwujcCVAHauIQ2eiuJ2ASGag==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rspack/binding-linux-x64-gnu@1.1.6':
     resolution: {integrity: sha512-MTjDEfPn4TwHoqs5d5Fck06kmXiTHZctGIcRVfrpg0RK0r1NLEHN+oosavRZ9c9H70f34+NmcHk+/qvV4c8lWg==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rspack/binding-linux-x64-musl@1.1.6':
     resolution: {integrity: sha512-LqDw7PTVr/4ZuGA0izgDQfamfr72USFHltR1Qhy2YVC3JmDmhG/pQi13LHcOLVaGH1xoeyCmEPNJpVizzDxSjg==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rspack/binding-win32-arm64-msvc@1.1.6':
     resolution: {integrity: sha512-RHApLM93YN0WdHpS35u2cm7VCqZ8Yg3CrNRL16VJtyT9e6MBqeScoe4XIgIWKPm7edFyedYAjLX0wQOApwfjkg==}

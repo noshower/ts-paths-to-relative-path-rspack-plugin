@@ -6,7 +6,7 @@ Files compiled in the bundleless mode of rslib retain TypeScript path aliases. U
 
 # Getting Started
 
-To begin, you'll need to install eslint-webpack-plugin:
+To begin, you'll need to install ts-paths-to-relative-path-rspack-plugin:
 
 > npm install ts-paths-to-relative-path-rspack-plugin --save-dev
 
