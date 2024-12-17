@@ -1,6 +1,7 @@
-import type { Compiler, RspackPluginInstance } from '@rspack/core';
-import fs from 'fs-extra';
 import path from 'path';
+import os from 'os';
+import fs from 'fs-extra';
+import type { Compiler, RspackPluginInstance } from '@rspack/core';
 
 const assertionTsConfigPath = (tsConfigPath?: string) => {
   if (!tsConfigPath) {
@@ -9,15 +10,22 @@ const assertionTsConfigPath = (tsConfigPath?: string) => {
 
   if (!path.isAbsolute(tsConfigPath)) {
     throw new Error(
-      'tsConfigPath must be an absolute path. actual path:' + tsConfigPath,
+      `tsConfigPath must be an absolute path. actual path:${tsConfigPath}`,
     );
   }
 
   if (!fs.existsSync(tsConfigPath)) {
     throw new Error(
-      'tsconfig.json file does not exist, actual path:' + tsConfigPath,
+      `tsconfig.json file does not exist, actual path:${tsConfigPath}`,
     );
   }
+};
+
+const convertToModulePath = (path: string) => {
+  if (os.platform() === 'win32') {
+    return path.replaceAll('\\', '/');
+  }
+  return path;
 };
 
 export class TsPathsToRelativePathRspackPlugin implements RspackPluginInstance {
@@ -41,9 +49,8 @@ export class TsPathsToRelativePathRspackPlugin implements RspackPluginInstance {
     if (config) {
       if (typeof config === 'string') {
         return config;
-      } else {
-        return config.configFile;
       }
+      return config.configFile;
     }
 
     return '';
@@ -68,9 +75,13 @@ export class TsPathsToRelativePathRspackPlugin implements RspackPluginInstance {
               const alias = p.replace('*', '');
 
               if (resolveData.request.startsWith(alias)) {
-                const aliasPath = path.join(baseUrl, v[0].replace('*', ''));
+                const aliasPath = convertToModulePath(
+                  path.join(baseUrl, v[0].replace('*', '')),
+                );
 
-                const fullAliasPath = `${path.resolve(path.dirname(tsConfigPath), aliasPath)}/`;
+                const fullAliasPath = convertToModulePath(
+                  `${path.resolve(path.dirname(tsConfigPath), aliasPath)}/`,
+                );
 
                 // Replace path alias
                 const fullPath = resolveData.request.replace(
@@ -79,7 +90,10 @@ export class TsPathsToRelativePathRspackPlugin implements RspackPluginInstance {
                 );
 
                 // Convert to relative path.
-                resolveData.request = `./${path.relative(path.dirname(resolveData.contextInfo.issuer), fullPath)}`;
+                resolveData.request = convertToModulePath(
+                  `./${path.relative(path.dirname(resolveData.contextInfo.issuer), fullPath)}`,
+                );
+
                 break;
               }
             }
