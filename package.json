@@ -1,6 +1,6 @@
 {
   "name": "ts-paths-to-relative-path-rspack-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "convert ts path alias to relative paths in the bundleless mode of rslib",
   "keywords": [
@@ -9,7 +9,8 @@
     "rslib",
     "relative",
     "alias",
-    "paths"
+    "paths",
+    "ts-paths-to-relative-path-rspack-plugin"
   ],
   "exports": {
     ".": {
