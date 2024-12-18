@@ -42,7 +42,6 @@
   "homepage": "https://github.com/noshower/ts-paths-to-relative-path-rspack-plugin#readme",
   "publishConfig": {
     "access": "public",
-    "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },
   "engines": {
